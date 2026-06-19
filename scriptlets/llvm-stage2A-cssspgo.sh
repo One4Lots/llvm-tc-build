@@ -26,7 +26,7 @@ info "Verifying dependencies"
 check_if_exists "${LLVM_SRC_DIR}"
 check_if_exists "${LLVM_STAGE0_INSTALL_DIR}"
 #TODO: Re-enable once MLGO is added
-#check_if_exists "${MLGO_DIR}/arm64"
+check_if_exists "${MLGO_DIR}/arm64"
 MODDED_PATH="${LLVM_STAGE0_BIN_DIR}:${STOCK_PATH}"
 export PATH="${MODDED_PATH}"
 export LD_LIBRARY_PATH="${LLVM_STAGE0_INSTALL_DIR}/lib"
@@ -56,7 +56,7 @@ _OPT_LDFLAGS=(
 rm -rf "${LLVM_STAGE2_BUILD_DIR}"
 mkdir -p "${LLVM_STAGE2_BUILD_DIR}" && cd "${LLVM_STAGE2_BUILD_DIR}"
 #TODO: Enable once MLGO is added
-#export TF_CPP_MIN_LOG_LEVEL=2
+export TF_CPP_MIN_LOG_LEVEL=2
 cmake -G Ninja -Wno-dev \
     -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
     -DCMAKE_INSTALL_PREFIX="${LLVM_STAGE2_INSTALL_DIR}" \

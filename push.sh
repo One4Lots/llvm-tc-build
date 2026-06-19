@@ -30,7 +30,7 @@ rel_tag="$(date '+%d%m%Y')"
 rel_date="$(date '+%-d %B %Y')"
 rel_file="${WORK_DIR}/neutron-clang-${rel_tag}.tar.zst"
 
-CATALOGUE_REPO="https://github.com/Neutron-Toolchains/clang-build-catalogue.git"
+CATALOGUE_REPO="https://github.com/One4Lots/clang-build-catalogue.git"
 
 neutron_fetch() {
     case "${1}" in
@@ -115,7 +115,7 @@ if ! git diff --cached --quiet; then
 Clang Version: ${clang_version}
 LLVM commit: ${llvm_commit_url}
 Builder commit: ${builder_commit_url}
-Release: https://github.com/Neutron-Toolchains/clang-build-catalogue/releases/tag/${rel_tag}"
+Release: https://github.com/One4Lots/clang-build-catalogue/releases/tag/${rel_tag}"
 fi
 
 git gc

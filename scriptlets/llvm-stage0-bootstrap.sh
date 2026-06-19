@@ -25,7 +25,7 @@ log "STAGE 0: Bootstrap Compiler"
 info "Verifying dependencies"
 check_if_exists "${LLVM_SRC_DIR}"
 #TODO: Re-enable once MLGO is added
-#check_if_exists "${MLGO_DIR}/x86"
+check_if_exists "${MLGO_DIR}/x86"
 
 LLVM_BIN_DIR=$(readlink -f "$(which clang)" | rev | cut -d'/' -f2- | rev)
 
@@ -55,7 +55,7 @@ _OPT_LDFLAGS=(
 rm -rf "${LLVM_STAGE0_BUILD_DIR}"
 mkdir -p "${LLVM_STAGE0_BUILD_DIR}" && cd "${LLVM_STAGE0_BUILD_DIR}"
 #TODO: Enable once MLGO is added
-#export TF_CPP_MIN_LOG_LEVEL=2
+export TF_CPP_MIN_LOG_LEVEL=2
 cmake -Wno-dev -G Ninja \
     -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
     -DLLVM_ENABLE_PROJECTS="clang;lld;polly" \

@@ -67,20 +67,20 @@ mkdir -p "${MLGO_DIR}"
 
 # TODO: Re-enable once MLGO is added
 # x86 regalloc
-#download_and_extract "${MLGO_DIR}/x86/regalloc" \
-#    "https://github.com/google/ml-compiler-opt/releases/download/regalloc-evict-v1.1/model.zip"
-#
+download_and_extract "${MLGO_DIR}/x86/regalloc" \
+    "https://github.com/google/ml-compiler-opt/releases/download/regalloc-evict-v1.1/model.zip"
+
 # x86 inline
-#download_and_extract "${MLGO_DIR}/x86/inline" \
-#    "https://github.com/google/ml-compiler-opt/releases/download/inlining-Oz-v1.2/saved_model.zip"
-#
+download_and_extract "${MLGO_DIR}/x86/inline" \
+    "https://github.com/google/ml-compiler-opt/releases/download/inlining-Oz-v1.2/saved_model.zip"
+
 # arm64 regalloc
-#download_and_extract "${MLGO_DIR}/arm64/regalloc" \
-#    "https://github.com/dakkshesh07/mlgo-linux-kernel/releases/download/regalloc-evict-v6.6.8-arm64-1/regalloc-evict-linux-v6.6.8-arm64-1.tar.zst"
-#
+download_and_extract "${MLGO_DIR}/arm64/regalloc" \
+    "https://github.com/dakkshesh07/mlgo-linux-kernel/releases/download/regalloc-evict-v6.6.8-arm64-1/regalloc-evict-linux-v6.6.8-arm64-1.tar.zst"
+
 # arm64 inline
-#download_and_extract "${MLGO_DIR}/arm64/inline/model" \
-#    "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/mlgo-models/arm64/inlining-Oz-chromium.tar.gz"
+download_and_extract "${MLGO_DIR}/arm64/inline/model" \
+    "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/mlgo-models/arm64/inlining-Oz-chromium.tar.gz"
 
 if [[ ${CLEAN_BUILD} -eq 1 ]]; then
     rm -rf "${BUILD_DIR}"
