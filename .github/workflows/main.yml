@@ -36,10 +36,10 @@ jobs:
         run: |
            sudo apt-get update -y
            sudo apt-get install -y \
-            bc cpio kmod bison clang llvm lld build-essential device-tree-compiler \
-            flex libssl-dev libncurses5-dev libncurses-dev libunwind-dev \
-            python3 python-is-python3 zip ccache jq curl git \
-            libelf-dev libc6 libc6-dev rsync wget binutils lz4 zstd \
+            bc cpio kmod bison clang llvm lld build-essential libc++-dev libc++abi-dev \
+            flex libssl-dev libncurses5-dev libncurses-dev libunwind-dev zlib1g-dev libzstd-dev \
+            python3 python-is-python3 zip ccache jq curl git libelf-dev libssl-dev \
+            libelf-dev libc6 libc6-dev rsync wget binutils lz4 zstd xz-utils cmake tar \
             gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi g++-aarch64-linux-gnu g++-arm-linux-gnueabi
 
       - name: "🧪 Setup CCache Engine"
